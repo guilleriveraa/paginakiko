@@ -21,37 +21,12 @@ if ($data === null) {
     exit;
 }
 
-$kvUrl = getenv('KV_REST_API_URL');
-$kvToken = getenv('KV_REST_API_TOKEN');
+// Guardar en archivo local
+$filePath = __DIR__ . '/../data/textos.json';
+$jsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
 
-if (!$kvUrl || !$kvToken) {
-    $filePath = __DIR__ . '/../data/textos.json';
-    $jsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
-    if (file_put_contents($filePath, $jsonData)) {
-        echo json_encode(['success' => true, 'message' => 'Guardado localmente']);
-    } else {
-        echo json_encode(['success' => false, 'error' => 'No se pudo guardar']);
-    }
-    exit;
-}
-
-$jsonData = json_encode($data);
-$ch = curl_init($kvUrl . '/set/textos');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
-curl_setopt($ch, CURLOPT_HTTPHEADER, [
-    'Content-Type: application/json',
-    'Authorization: Bearer ' . $kvToken
-]);
-
-$response = curl_exec($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-curl_close($ch);
-
-if ($httpCode === 200 || $httpCode === 201) {
-    echo json_encode(['success' => true, 'message' => 'Textos guardados en Upstash Redis']);
+if (file_put_contents($filePath, $jsonData)) {
+    echo json_encode(['success' => true, 'message' => 'Textos guardados correctamente']);
 } else {
-    echo json_encode(['success' => false, 'error' => 'Error: ' . $response]);
+    echo json_encode(['success' => false, 'error' => 'No se pudo guardar el archivo']);
 }
-?>

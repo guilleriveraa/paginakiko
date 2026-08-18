@@ -1,0 +1,8 @@
+{
+  "name": "paginakiko",
+  "description": "Web de Cerrajería Francisco Rivera",
+  "type": "project",
+  "require": {
+    "php": ">=7.4"
+  }
+}
