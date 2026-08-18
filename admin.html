@@ -29,9 +29,6 @@
                 </div>
                 <div class="admin-nav-right">
                     <span class="admin-user"><i class="fas fa-user-shield"></i> Administrador</span>
-                    <button id="saveAllBtn" class="btn-save-all">
-                        <i class="fas fa-save"></i> Guardar todo
-                    </button>
                     <a href="admin-login.html" id="logoutBtn" class="btn-logout">
                         <i class="fas fa-sign-out-alt"></i> Cerrar sesión
                     </a>
@@ -44,53 +41,35 @@
     <main class="admin-main">
         <div class="container">
 
-            <!-- Mensaje de guardado -->
-            <div id="saveMessage" class="save-message" style="display: none;">
-                <i class="fas fa-check-circle"></i> Todos los cambios guardados correctamente
+            <!-- ===== TABS ===== -->
+            <div class="admin-tabs-principales">
+                <button class="tab-principal active" data-tab="textos">
+                    <i class="fas fa-pen"></i> Textos
+                </button>
+                <button class="tab-principal" data-tab="galeria">
+                    <i class="fas fa-images"></i> Galería
+                </button>
             </div>
 
-            <!-- ===== SECCIÓN 1: ESTADÍSTICAS ===== -->
-            <div class="admin-stats">
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
-                    <div class="stat-info">
-                        <span class="stat-number" id="totalSections">5</span>
-                        <span class="stat-label">Secciones</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-images"></i></div>
-                    <div class="stat-info">
-                        <span class="stat-number" id="totalImages">0</span>
-                        <span class="stat-label">Imágenes totales</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="fas fa-file-alt"></i></div>
-                    <div class="stat-info">
-                        <span class="stat-number" id="totalTexts">0</span>
-                        <span class="stat-label">Textos editados</span>
-                    </div>
+            <!-- ===== TAB: TEXTOS ===== -->
+            <div class="tab-contenido active" id="tabTextos">
+                <div class="admin-editor">
+                    <h2><i class="fas fa-edit"></i> Editor de Textos</h2>
+                    <p class="admin-subtitle">Edita todos los textos de la web. Los cambios se guardan automáticamente en localStorage.</p>
+                    <div id="saveMessage" class="save-message" style="display: none;"></div>
+                    <div id="textosEditor"></div>
                 </div>
             </div>
 
-            <!-- ===== SECCIÓN 2: EDITOR DE SECCIONES ===== -->
-            <div class="admin-editor">
-                <h2><i class="fas fa-edit"></i> Editor de contenido</h2>
-                <p class="admin-subtitle">Gestiona las secciones, imágenes y textos de la galería</p>
-
-                <!-- Navegación entre secciones -->
-                <div class="admin-tabs" id="sectionTabs">
-                    <button class="tab-btn active" data-section="cerrajeria">Cerrajería</button>
-                    <button class="tab-btn" data-section="aluminio">Aluminio</button>
-                    <button class="tab-btn" data-section="muebles">Muebles de Hierro</button>
-                    <button class="tab-btn" data-section="barandillas">Barandillas</button>
-                    <button class="tab-btn" data-section="varios">Varios</button>
-                </div>
-
-                <!-- Contenido de cada sección -->
-                <div class="tab-content" id="tabContent">
-                    <!-- Cada sección se genera con JavaScript -->
+            <!-- ===== TAB: GALERÍA ===== -->
+            <div class="tab-contenido" id="tabGaleria">
+                <div class="admin-editor">
+                    <h2><i class="fas fa-images"></i> Editor de Galería</h2>
+                    <p class="admin-subtitle">Gestiona las imágenes y portadas de la galería.</p>
+                    <p style="color: #8a7a6a; text-align: center; padding: 2rem;">
+                        <i class="fas fa-info-circle"></i> La galería usa imágenes fijas en el HTML.
+                        <br>Para cambiar las imágenes, edita los archivos en <strong>img/galeria/</strong>
+                    </p>
                 </div>
             </div>
 
@@ -102,15 +81,46 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">Panel de Administración</div>
-                <p class="footer-copy">© 2026 Cerrajería Francisco Rivera e Hijo · <a href="aviso-legal.html">Aviso
-                        legal</a></p>
+                <p class="footer-copy">© 2026 Cerrajería Francisco Rivera e Hijo</p>
             </div>
         </div>
     </footer>
 
     <!-- ========== JAVASCRIPT ========== -->
-    <script src="js/admin-editor.js"></script>
+    <script src="js/admin-textos.js"></script>
     <script src="js/cookies.js"></script>
+    <script src="js/cargar-textos.js"></script>
+
+    <script>
+        // Tabs
+        document.querySelectorAll('.tab-principal').forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.tab-principal').forEach(function(t) {
+                    t.classList.remove('active');
+                });
+                this.classList.add('active');
+
+                const target = this.dataset.tab;
+                document.querySelectorAll('.tab-contenido').forEach(function(content) {
+                    content.classList.remove('active');
+                });
+
+                if (target === 'textos') {
+                    document.getElementById('tabTextos').classList.add('active');
+                } else if (target === 'galeria') {
+                    document.getElementById('tabGaleria').classList.add('active');
+                }
+            });
+        });
+
+        // Cerrar sesión
+        document.getElementById('logoutBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            localStorage.removeItem('adminLoggedIn');
+            localStorage.removeItem('adminLoginTime');
+            window.location.href = 'admin-login.html';
+        });
+    </script>
 
 </body>
 

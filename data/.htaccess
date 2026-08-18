@@ -1,0 +1,12 @@
+# Proteger archivos JSON
+<Files "*.json">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Permitir solo al script PHP de guardar
+<Files "textos.json">
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1
+</Files>
