@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Contacto | Cerrajería Francisco Rivera e Hijo</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ========== HEADER ========== -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Cerrajería Francisco Rivera e Hijo">
+                        <span class="logo-texto">Cerrajeria y Aluminio Francisco Rivera <span class="logo-sub">e
+                                Hijo</span></span>
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="contacto.html" class="btn-nav">Presupuesto</a>
+                    <div class="menu-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ========== HERO ========== -->
+    <section class="contacto-hero">
+        <div class="container">
+            <div class="section-subtitle">Contacto</div>
+            <h1>¿Necesitas un presupuesto?</h1>
+            <p>Cuéntanos lo que necesitas y te asesoraremos sin compromiso.</p>
+        </div>
+    </section>
+
+    <!-- ========== MENSAJE DE ÉXITO ========== -->
+    <div id="successMessage" style="display: none; background: rgba(39, 174, 96, 0.1); border: 2px solid #27ae60; color: #27ae60; padding: 1rem 1.5rem; border-radius: 6px; margin: 0 auto 2rem; max-width: 600px; text-align: center; align-items: center; justify-content: center; gap: 0.8rem;">
+        <i class="fas fa-check-circle" style="font-size: 1.5rem; color: #27ae60 !important;"></i>
+        <strong>¡Mensaje enviado correctamente!</strong> Nos pondremos en contacto contigo lo antes posible.
+    </div>
+
+    <!-- ========== INFO CONTACTO ========== -->
+    <div class="container">
+        <div class="info-contacto-grid">
+            <div class="info-card">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Teléfono</h3>
+                <p><a href="tel:653676671">653 67 66 71</a></p>
+                <p style="font-size: 0.7rem; margin-top: 0.5rem;">Lun a Vie · 9:00 - 18:00</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-envelope"></i>
+                <h3>Email</h3>
+                <p><a href="mailto:fco.riveraehijo@hotmail.com">fco.riveraehijo@hotmail.com</a></p>
+                <p style="font-size: 0.7rem; margin-top: 0.5rem;">Respuesta en &lt;48h</p>
+            </div>
+            <div class="info-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Dirección</h3>
+                <p>Polígono Industrial, C. Cobalto, 61<br>10810 Montehermoso, Cáceres</p>
+                <p style="font-size: 0.7rem; margin-top: 0.5rem;">Visítanos en nuestro taller</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FORMULARIO + MAPA ========== -->
+    <div class="container">
+        <div class="formulario-mapa">
+            <div class="formulario-contacto">
+                <h2>Envíanos un mensaje</h2>
+                <form action="https://formsubmit.co/guillemonte22@gmail.com" method="POST">
+                    
+                    <!-- CAMPOS OCULTOS DE FORMSUBMIT -->
+                    <input type="hidden" name="_subject" value="Nuevo mensaje desde la web - Cerrajería Francisco Rivera">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_template" value="table">
+                    <!-- ✅ PARA PROBAR SIN DOMINIO: usa contacto.html?success=1 -->
+                    <input type="hidden" name="_next" value="contacto.html?success=1">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre completo *" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" placeholder="Correo electrónico *" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Teléfono">
+                        </div>
+                        <div class="form-group">
+                            <label for="motivo">Motivo de consulta *</label>
+                            <select id="motivo" name="motivo" required>
+                                <option value="">Selecciona el motivo...</option>
+                                <option value="Solicitar presupuesto">📋 Solicitar presupuesto</option>
+                                <option value="Consulta general">❓ Consulta general</option>
+                                <option value="Información sobre productos">🔧 Información sobre productos</option>
+                                <option value="Reparación o mantenimiento">🛠️ Reparación o mantenimiento</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Tu mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos qué necesitas..." required></textarea>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="privacidad" name="privacidad" required>
+                        <label for="privacidad">He leído y acepto la <a href="aviso-legal.html">política de privacidad</a> *</label>
+                    </div>
+                    <button type="submit" class="btn btn-enviar">Enviar mensaje <i class="fas fa-paper-plane"></i></button>
+                </form>
+                <div id="formMessage" style="margin-top: 1rem;"></div>
+            </div>
+
+            <div class="mapa-container">
+                <h2>¿Dónde estamos?</h2>
+                <div class="mapa-embed">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3052.1484975719095!2d-6.371929988310529!3d40.094401971374296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3e0aff190f0ed5%3A0xabfa100809ee1282!2sCerrajer%C3%ADa%20%26%20Aluminio%20Francisco%20Rivera%20e%20Hijo%20S.L.!5e0!3m2!1ses!2ses!4v1786718635197!5m2!1ses!2ses"
+                        width="600" 
+                        height="450" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
+                <div class="direcciones">
+                    <div class="direccion-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Francisco Rivera e Hijo</strong>
+                            <p>Polígono Industrial, C. Cobalto, 61<br>10810 Montehermoso, Cáceres</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Francisco Rivera e Hijo</div>
+                <div class="footer-social">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <p class="footer-copy">© 2026 Cerrajería Francisco Rivera e Hijo · <a href="aviso-legal.html">Aviso legal</a> | <a href="cookies.html">Política de cookies</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script>
+        // Menú móvil
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Mostrar mensaje de éxito si llega el parámetro success
+        if (window.location.search.includes('success=1')) {
+            const msg = document.getElementById('successMessage');
+            if (msg) {
+                msg.style.display = 'flex';
+                const form = document.querySelector('.formulario-contacto form');
+                if (form) form.style.display = 'none';
+            }
+        }
+    </script>
+    <script src="js/cookies.js"></script>
+</body>
+
+<!-- ========== COOKIES ========== -->
+<div id="cookieBanner" class="cookie-banner" style="display: none;">
+    <div class="cookie-banner-content">
+        <p>🍪 Usamos cookies propias y de terceros para mejorar tu experiencia. <a href="cookies.html">Más información</a>.</p>
+        <div class="cookie-buttons">
+            <button id="acceptCookiesBtn" class="btn-cookie accept">Aceptar</button>
+            <button id="rejectCookiesBtn" class="btn-cookie reject">Rechazar</button>
+        </div>
+    </div>
+</div>
+
+</html>

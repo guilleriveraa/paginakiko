@@ -1,0 +1,103 @@
+/* ========== MENÚS / DOSIERES PAGE ========== */
+
+.seccion-menus {
+    margin: 4rem 0;
+}
+
+.seccion-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.seccion-header i {
+    font-size: 2.5rem;
+    color: #8a7a6a !important;
+    margin-bottom: 1rem;
+}
+
+.seccion-header h2 {
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+    color: #1e1e1e;
+}
+
+.seccion-header p {
+    color: #5a5a5a;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Dosiers */
+.dosiers-grid {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.dosier-card {
+    background: #f5f3f0;
+    border: 1px solid #e8e4e0;
+    padding: 2.5rem 2rem;
+    width: 280px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.dosier-card:hover {
+    transform: translateY(-4px);
+    border-color: #a09080;
+}
+
+.dosier-card i {
+    font-size: 3rem;
+    color: #8a7a6a !important;
+    margin-bottom: 1rem;
+}
+
+.dosier-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #1e1e1e;
+    font-weight: 600;
+}
+
+.dosier-card p {
+    font-size: 0.85rem;
+    color: #5a5a5a;
+    margin-bottom: 1.5rem;
+}
+
+.dosier-card .btn {
+    padding: 8px 20px;
+    font-size: 0.7rem;
+}
+
+/* CTA */
+.cta-menus {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #f5f3f0;
+    border: 1px solid #e8e4e0;
+    margin: 3rem 0;
+}
+
+.cta-menus h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1e1e1e;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .dosiers-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dosier-card {
+        width: 100%;
+        max-width: 340px;
+    }
+}

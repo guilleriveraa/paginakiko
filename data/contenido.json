@@ -1,0 +1,49 @@
+{
+    "secciones": {
+        "cerrajeria": {
+            "titulo": "Cerrajería",
+            "descripcion": "Trabajos de cerrajería en general: puertas metálicas, rejas de seguridad, cerraduras, forja artesanal y todo tipo de estructuras metálicas para viviendas y locales. Fabricamos piezas duraderas con los mejores materiales y acabados.",
+            "imagenes": [
+                { "id": "c1", "nombre": "Puerta metálica", "src": "img/galeria/cerrajeria/1.jpg" },
+                { "id": "c2", "nombre": "Rejas de seguridad", "src": "img/galeria/cerrajeria/2.jpg" },
+                { "id": "c3", "nombre": "Forja artesanal", "src": "img/galeria/cerrajeria/3.jpg" }
+            ]
+        },
+        "aluminio": {
+            "titulo": "Aluminio",
+            "descripcion": "Fabricación e instalación de ventanas, puertas, perfiles y estructuras de aluminio. Ofrecemos soluciones ligeras, duraderas y resistentes a la corrosión, con acabados de alta calidad y eficiencia energética.",
+            "imagenes": [
+                { "id": "a1", "nombre": "Ventana de aluminio", "src": "img/galeria/aluminio/1.jpg" },
+                { "id": "a2", "nombre": "Puerta de aluminio", "src": "img/galeria/aluminio/2.jpg" },
+                { "id": "a3", "nombre": "Perfiles de aluminio", "src": "img/galeria/aluminio/3.jpg" }
+            ]
+        },
+        "muebles": {
+            "titulo": "Muebles de Hierro",
+            "descripcion": "Diseño y fabricación de muebles en hierro forjado y metálico: mesas, sillas, estanterías, bases de lámparas, percheros y mobiliario a medida. Combinamos funcionalidad, durabilidad y estética en cada pieza.",
+            "imagenes": [
+                { "id": "m1", "nombre": "Mesa de hierro forjado", "src": "img/galeria/muebles/1.jpg" },
+                { "id": "m2", "nombre": "Sillas de hierro", "src": "img/galeria/muebles/2.jpg" },
+                { "id": "m3", "nombre": "Estantería metálica", "src": "img/galeria/muebles/3.jpg" }
+            ]
+        },
+        "barandillas": {
+            "titulo": "Barandillas",
+            "descripcion": "Fabricación e instalación de barandillas, pasamanos y protecciones para escaleras, balcones, terrazas y accesos. Diseñamos soluciones seguras y estéticas, adaptadas a cada espacio y estilo arquitectónico.",
+            "imagenes": [
+                { "id": "b1", "nombre": "Barandilla de escalera", "src": "img/galeria/barandillas/1.jpg" },
+                { "id": "b2", "nombre": "Barandilla de balcón", "src": "img/galeria/barandillas/2.jpg" },
+                { "id": "b3", "nombre": "Pasamanos de hierro", "src": "img/galeria/barandillas/3.jpg" }
+            ]
+        },
+        "varios": {
+            "titulo": "Varios",
+            "descripcion": "Otros trabajos de cerrajería y metalistería: estructuras especiales, piezas únicas, reparaciones, restauraciones y proyectos personalizados. Si tienes una idea, nosotros la hacemos realidad.",
+            "imagenes": [
+                { "id": "v1", "nombre": "Estructura especial", "src": "img/galeria/varios/1.jpg" },
+                { "id": "v2", "nombre": "Pieza única", "src": "img/galeria/varios/2.jpg" },
+                { "id": "v3", "nombre": "Reparación de herramienta", "src": "img/galeria/varios/3.jpg" }
+            ]
+        }
+    }
+}

@@ -1,0 +1,81 @@
+/* ========== PRODUCTOS PAGE ========== */
+
+.productos-hero {
+    text-align: center;
+    padding: 60px 0 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e4e0;
+}
+
+.productos-hero h1 {
+    color: #1e1e1e;
+}
+
+.productos-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #5a5a5a;
+    font-size: 0.95rem;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.producto-card {
+    background: #ffffff;
+    border: 1px solid #e8e4e0;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.producto-card:hover {
+    transform: translateY(-4px);
+    border-color: #a09080;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.producto-card i {
+    font-size: 3rem;
+    color: #8a7a6a !important;
+    margin-bottom: 1rem;
+}
+
+.producto-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #1e1e1e;
+    font-weight: 600;
+}
+
+.producto-card p {
+    color: #5a5a5a;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.cta-productos {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: #f5f3f0;
+    border: 1px solid #e8e4e0;
+    margin: 3rem 0;
+}
+
+.cta-productos h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1e1e1e;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+}

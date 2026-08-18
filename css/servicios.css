@@ -1,0 +1,251 @@
+/* ========== SERVICIOS PAGE ========== */
+
+.servicios-hero {
+    text-align: center;
+    padding: 60px 0 40px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8e4e0;
+}
+
+.servicios-hero h1 {
+    font-size: 2.8rem;
+    color: #1e1e1e;
+    margin-bottom: 1rem;
+}
+
+.servicios-hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #5a5a5a;
+    font-size: 0.95rem;
+}
+
+/* Intro */
+.intro-servicios {
+    text-align: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid #e8e4e0;
+}
+
+.intro-servicios h2 {
+    border-left: none;
+    padding-left: 0;
+    color: #1e1e1e;
+}
+
+.intro-servicios p {
+    max-width: 700px;
+    margin: 1rem auto 0;
+    color: #5a5a5a;
+}
+
+.valores-destacados {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.valor-destacado {
+    text-align: center;
+    min-width: 180px;
+    padding: 1.5rem;
+}
+
+.valor-destacado i {
+    font-size: 2.5rem;
+    color: #8a7a6a !important;
+    margin-bottom: 1rem;
+}
+
+.valor-destacado h4 {
+    font-size: 1rem;
+    color: #1e1e1e;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.valor-destacado p {
+    font-size: 0.8rem;
+    color: #6a6a6a;
+}
+
+/* Servicio individual */
+.servicio-item {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin: 4rem 0;
+    padding: 2rem 0;
+    border-bottom: 1px solid #e8e4e0;
+    flex-wrap: wrap;
+}
+
+.servicio-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.servicio-icono {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.servicio-icono i {
+    font-size: 4rem;
+    color: #8a7a6a !important;
+}
+
+.servicio-contenido {
+    flex: 2;
+}
+
+.servicio-contenido h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #1e1e1e;
+    font-weight: 500;
+}
+
+.servicio-contenido p {
+    color: #5a5a5a;
+    margin-bottom: 1rem;
+}
+
+.servicio-caracteristicas {
+    list-style: none;
+    margin: 1rem 0;
+}
+
+.servicio-caracteristicas li {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #5a5a5a;
+    font-size: 0.9rem;
+}
+
+.servicio-caracteristicas li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: #8a7a6a;
+}
+
+/* Proceso */
+.proceso {
+    margin: 4rem 0;
+    text-align: center;
+}
+
+.proceso h2 {
+    color: #1e1e1e;
+    border-left: none;
+    padding-left: 0;
+}
+
+.proceso>p {
+    color: #5a5a5a;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.proceso-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.proceso-paso {
+    flex: 1;
+    min-width: 200px;
+    max-width: 260px;
+    background: #f5f3f0;
+    border: 1px solid #e8e4e0;
+    padding: 2rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.proceso-paso:hover {
+    transform: translateY(-4px);
+    border-color: #a09080;
+}
+
+.paso-numero {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 50%;
+    border: 1.5px solid #8a7a6a;
+    color: #8a7a6a;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.proceso-paso h4 {
+    color: #1e1e1e;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.proceso-paso p {
+    font-size: 0.85rem;
+    color: #6a6a6a;
+}
+
+/* CTA */
+.cta-servicios {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #f5f3f0;
+    border: 1px solid #e8e4e0;
+    margin: 3rem 0;
+}
+
+.cta-servicios h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #1e1e1e;
+    font-weight: 500;
+}
+
+.cta-servicios p {
+    color: #5a5a5a;
+}
+
+.cta-servicios .btn {
+    margin-top: 1rem;
+    padding: 14px 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .servicios-hero h1 {
+        font-size: 2rem;
+    }
+
+    .servicio-item,
+    .servicio-item.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .servicio-caracteristicas li {
+        text-align: left;
+    }
+
+    .proceso-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .proceso-paso {
+        max-width: 100%;
+        width: 100%;
+    }
+}
