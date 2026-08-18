@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/galeria-detalle.css">
 </head>
 
-<body data-page-type="detalle" data-section="muebles">
+<body>
 
     <!-- ========== HEADER ========== -->
     <header>
@@ -52,8 +52,8 @@
             <div class="breadcrumb">
                 <a href="galeria.html">Galería</a> / Muebles de Hierro
             </div>
-            <h1 id="detalleTitulo">Muebles de Hierro</h1>
-            <p class="descripcion" id="detalleDescripcion">
+            <h1>Muebles de Hierro</h1>
+            <p class="descripcion">
                 Diseño y fabricación de muebles en hierro forjado y metálico: mesas, sillas, estanterías,
                 bases de lámparas, percheros y mobiliario a medida. Combinamos funcionalidad, durabilidad
                 y estética en cada pieza.
@@ -63,11 +63,31 @@
 
     <!-- ========== GALERÍA DE IMÁGENES ========== -->
     <div class="container">
-        <div class="detalle-grid" id="detalleGrid">
-            <!-- Generado dinámicamente por contenido-loader.js -->
+        <div class="detalle-grid">
+
+            <div class="detalle-item">
+                <img src="img/muebles1.jpeg" alt="Mesa de hierro forjado">
+                <div class="detalle-overlay"><p>Mesa de hierro forjado</p></div>
+            </div>
+
+            <div class="detalle-item">
+                <img src="img/muebles2.jpeg" alt="Sillas de hierro">
+                <div class="detalle-overlay"><p>Sillas de hierro</p></div>
+            </div>
+
+            <div class="detalle-item">
+                <img src="img/muebles3.jpeg" alt="Estantería metálica">
+                <div class="detalle-overlay"><p>Estantería metálica</p></div>
+            </div>
+
+            <div class="detalle-item">
+                <img src="img/muebles4.jpeg" alt="Estantería metálica">
+                <div class="detalle-overlay"><p>Estantería metálica</p></div>
+            </div>
+
+
         </div>
 
-        <!-- Botón volver -->
         <a href="galeria.html" class="btn btn-volver">
             <i class="fas fa-arrow-left"></i> Volver a la galería
         </a>
@@ -78,19 +98,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">Francisco Rivera e Hijo</div>
-                <div class="footer-social">
-                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
                 <p class="footer-copy">© 2026 Cerrajería Francisco Rivera e Hijo · <a href="aviso-legal.html">Aviso
                         legal</a> | <a href="cookies.html">Política de cookies</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- ========== JAVASCRIPT ========== -->
     <script src="js/nav.js"></script>
-    <script src="js/contenido-loader.js"></script>
     <script src="js/cookies.js"></script>
 
 </body>

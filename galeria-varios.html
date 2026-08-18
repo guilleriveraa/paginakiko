@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/galeria-detalle.css">
 </head>
 
-<body data-page-type="detalle" data-section="varios">
+<body>
 
     <!-- ========== HEADER ========== -->
     <header>
@@ -52,8 +52,8 @@
             <div class="breadcrumb">
                 <a href="galeria.html">Galería</a> / Varios
             </div>
-            <h1 id="detalleTitulo">Varios</h1>
-            <p class="descripcion" id="detalleDescripcion">
+            <h1>Varios</h1>
+            <p class="descripcion">
                 Otros trabajos de cerrajería y metalistería: estructuras especiales, piezas únicas,
                 reparaciones, restauraciones y proyectos personalizados. Si tienes una idea,
                 nosotros la hacemos realidad.
@@ -63,11 +63,25 @@
 
     <!-- ========== GALERÍA DE IMÁGENES ========== -->
     <div class="container">
-        <div class="detalle-grid" id="detalleGrid">
-            <!-- Generado dinámicamente por contenido-loader.js -->
+        <div class="detalle-grid">
+
+            <div class="detalle-item">
+                <img src="img/varios1.jpeg" alt="Estructura especial">
+                <div class="detalle-overlay"><p>Estructura especial</p></div>
+            </div>
+
+            <div class="detalle-item">
+                <img src="img/varios2.jpeg" alt="Pieza única">
+                <div class="detalle-overlay"><p>Pieza única</p></div>
+            </div>
+
+            <div class="detalle-item">
+                <img src="img/varios3.jpeg" alt="Reparación de herramienta">
+                <div class="detalle-overlay"><p>Reparación de herramienta</p></div>
+            </div>
+
         </div>
 
-        <!-- Botón volver -->
         <a href="galeria.html" class="btn btn-volver">
             <i class="fas fa-arrow-left"></i> Volver a la galería
         </a>
@@ -78,19 +92,13 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">Francisco Rivera e Hijo</div>
-                <div class="footer-social">
-                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
                 <p class="footer-copy">© 2026 Cerrajería Francisco Rivera e Hijo · <a href="aviso-legal.html">Aviso
                         legal</a> | <a href="cookies.html">Política de cookies</a></p>
             </div>
         </div>
     </footer>
 
-    <!-- ========== JAVASCRIPT ========== -->
     <script src="js/nav.js"></script>
-    <script src="js/contenido-loader.js"></script>
     <script src="js/cookies.js"></script>
 
 </body>
