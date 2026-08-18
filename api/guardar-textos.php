@@ -1,9 +1,4 @@
 <?php
-/**
- * guardar-textos.php
- * API para guardar los textos en Upstash Redis (Vercel)
- */
-
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
 header('Content-Type: application/json');
@@ -26,30 +21,21 @@ if ($data === null) {
     exit;
 }
 
-// =============================================
-// CONFIGURACIÓN - Variables de Vercel
-// =============================================
 $kvUrl = getenv('KV_REST_API_URL');
 $kvToken = getenv('KV_REST_API_TOKEN');
 
-// Si no hay variables (desarrollo local), guardar en archivo
 if (!$kvUrl || !$kvToken) {
     $filePath = __DIR__ . '/../data/textos.json';
     $jsonData = json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
     if (file_put_contents($filePath, $jsonData)) {
         echo json_encode(['success' => true, 'message' => 'Guardado localmente']);
     } else {
-        echo json_encode(['success' => false, 'error' => 'No se pudo guardar localmente']);
+        echo json_encode(['success' => false, 'error' => 'No se pudo guardar']);
     }
     exit;
 }
 
-// =============================================
-// GUARDAR EN UPASTASH REDIS
-// =============================================
 $jsonData = json_encode($data);
-
-// Usar la API REST de Upstash
 $ch = curl_init($kvUrl . '/set/textos');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_POST, true);
