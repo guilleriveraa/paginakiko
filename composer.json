@@ -3,7 +3,7 @@
   "description": "Web de Cerrajería Francisco Rivera",
   "type": "project",
   "require": {
-    "php": ">=7.4.0"
+    "php": ">=8.0"
   },
   "scripts": {
     "vercel-build": "echo 'No build required'"
