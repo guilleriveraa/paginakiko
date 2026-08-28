@@ -562,6 +562,45 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
 
+// ===== SECCIÓN: INICIO - SERVICIOS =====
+html += `
+    <div class="seccion-editor">
+        <h3><i class="fas fa-concierge-bell"></i> Inicio - Servicios</h3>
+        <div class="campo">
+            <label>Subtítulo de la sección</label>
+            <input type="text" id="inicio_servicios_subtitulo" value="${escapeHtml(textos.inicio_servicios.subtitulo || '')}">
+        </div>
+        <div class="campo">
+            <label>Título de la sección</label>
+            <input type="text" id="inicio_servicios_titulo" value="${escapeHtml(textos.inicio_servicios.titulo || '')}">
+        </div>
+        <div class="campo">
+            <label>Tarjeta 1 - Título</label>
+            <input type="text" id="inicio_servicios_card1_titulo" value="${escapeHtml(textos.inicio_servicios.card1_titulo || '')}">
+        </div>
+        <div class="campo">
+            <label>Tarjeta 1 - Descripción</label>
+            <textarea id="inicio_servicios_card1_desc" rows="2">${escapeHtml(textos.inicio_servicios.card1_desc || '')}</textarea>
+        </div>
+        <div class="campo">
+            <label>Tarjeta 2 - Título</label>
+            <input type="text" id="inicio_servicios_card2_titulo" value="${escapeHtml(textos.inicio_servicios.card2_titulo || '')}">
+        </div>
+        <div class="campo">
+            <label>Tarjeta 2 - Descripción</label>
+            <textarea id="inicio_servicios_card2_desc" rows="2">${escapeHtml(textos.inicio_servicios.card2_desc || '')}</textarea>
+        </div>
+        <div class="campo">
+            <label>Tarjeta 3 - Título</label>
+            <input type="text" id="inicio_servicios_card3_titulo" value="${escapeHtml(textos.inicio_servicios.card3_titulo || '')}">
+        </div>
+        <div class="campo">
+            <label>Tarjeta 3 - Descripción</label>
+            <textarea id="inicio_servicios_card3_desc" rows="2">${escapeHtml(textos.inicio_servicios.card3_desc || '')}</textarea>
+        </div>
+    </div>
+`;
+
         container.innerHTML = html;
         initTextosEvents();
     }

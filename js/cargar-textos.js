@@ -266,6 +266,11 @@
             aplicarContacto(textos);
         }
 
+        // =============================================
+        // 👇 LLAMADA A LA NUEVA FUNCIÓN AQUÍ
+        // =============================================
+        aplicarInicioServicios(textos);
+
         // Siempre aplicar header y footer
         aplicarHeader(textos);
         aplicarFooter(textos);
@@ -441,7 +446,40 @@
     }
 
     // =============================================
-    // 11. APLICAR FOOTER
+    // 11. APLICAR INICIO SERVICIOS (NUEVA FUNCIÓN)
+    // =============================================
+    function aplicarInicioServicios(textos) {
+        if (!textos.inicio_servicios) return;
+
+        const s = textos.inicio_servicios;
+
+        const subtitulo = document.getElementById('inicioServiciosSubtitulo');
+        const titulo = document.getElementById('inicioServiciosTitulo');
+        const card1Titulo = document.getElementById('inicioServiciosCard1Titulo');
+        const card1Desc = document.getElementById('inicioServiciosCard1Desc');
+        const card1Link = document.getElementById('inicioServiciosCard1Link');
+        const card2Titulo = document.getElementById('inicioServiciosCard2Titulo');
+        const card2Desc = document.getElementById('inicioServiciosCard2Desc');
+        const card2Link = document.getElementById('inicioServiciosCard2Link');
+        const card3Titulo = document.getElementById('inicioServiciosCard3Titulo');
+        const card3Desc = document.getElementById('inicioServiciosCard3Desc');
+        const card3Link = document.getElementById('inicioServiciosCard3Link');
+
+        if (subtitulo) subtitulo.textContent = s.subtitulo || 'Lo que hacemos';
+        if (titulo) titulo.innerHTML = (s.titulo || 'Servicios de cerrajería y fabricación').replace(/\n/g, '<br>');
+        if (card1Titulo) card1Titulo.textContent = s.card1_titulo || 'Cerrajería en general';
+        if (card1Desc) card1Desc.textContent = s.card1_desc || '';
+        if (card1Link) card1Link.innerHTML = (s.card1_link || 'Más información') + ' <i class="fas fa-arrow-right"></i>';
+        if (card2Titulo) card2Titulo.textContent = s.card2_titulo || 'Puertas motorizadas';
+        if (card2Desc) card2Desc.textContent = s.card2_desc || '';
+        if (card2Link) card2Link.innerHTML = (s.card2_link || 'Ver productos') + ' <i class="fas fa-arrow-right"></i>';
+        if (card3Titulo) card3Titulo.textContent = s.card3_titulo || 'Trabajos a medida';
+        if (card3Desc) card3Desc.textContent = s.card3_desc || '';
+        if (card3Link) card3Link.innerHTML = (s.card3_link || 'Más información') + ' <i class="fas fa-arrow-right"></i>';
+    }
+
+    // =============================================
+    // 12. APLICAR FOOTER
     // =============================================
     function aplicarFooter(textos) {
         const footerText = document.querySelector('.footer-copy');
@@ -455,7 +493,7 @@
     }
 
     // =============================================
-    // 12. INICIAR
+    // 13. INICIAR
     // =============================================
     document.addEventListener('DOMContentLoaded', cargarTextos);
     console.log('✅ cargar-textos.js cargado correctamente');

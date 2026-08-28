@@ -88,5 +88,18 @@
         "texto": "Cerrajería y Aluminio Francisco Rivera",
         "aviso_legal": "Aviso legal",
         "cookies": "Política de cookies"
+    },
+    "inicio_servicios": {
+    "subtitulo": "Lo que hacemos",
+    "titulo": "Servicios de cerrajería y fabricación",
+    "card1_titulo": "Cerrajería en general",
+    "card1_desc": "Reparación y fabricación de todo tipo de elementos metálicos: cerraduras, puertas, rejas, barandillas y más.",
+    "card1_link": "Más información",
+    "card2_titulo": "Puertas motorizadas",
+    "card2_desc": "Instalación de puertas motorizadas hechas a medida.",
+    "card2_link": "Ver productos",
+    "card3_titulo": "Trabajos a medida",
+    "card3_desc": "Diseñamos y fabricamos piezas personalizadas según las necesidades específicas de cada cliente.",
+    "card3_link": "Más información"
     }
 }
