@@ -932,3 +932,6 @@ footer {
         margin-top: 0.5rem;
     }
 }
+.logo-sub {
+    display: none !important;
+}
