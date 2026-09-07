@@ -99,7 +99,72 @@ document.addEventListener('DOMContentLoaded', function() {
             parent.appendChild(placeholder);
         });
     });
+/**
+ * galeria.js
+ * Lightbox para las galerías de imágenes
+ */
 
+document.addEventListener('DOMContentLoaded', function() {
+
+    // =============================================
+    // 1. ELEMENTOS DEL LIGHTBOX
+    // =============================================
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    // =============================================
+    // 2. OBTENER TODAS LAS IMÁGENES DE LA GALERÍA
+    // =============================================
+    const images = document.querySelectorAll('.detalle-item img');
+
+    // =============================================
+    // 3. ABRIR LIGHTBOX AL HACER CLIC EN UNA IMAGEN
+    // =============================================
+    images.forEach(function(img) {
+        img.addEventListener('click', function() {
+            const src = this.getAttribute('src');
+            const alt = this.getAttribute('alt') || 'Imagen';
+            const overlay = this.closest('.detalle-item').querySelector('.detalle-overlay p');
+
+            lightboxImg.src = src;
+            lightboxCaption.textContent = overlay ? overlay.textContent : alt;
+            lightbox.style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Evitar scroll
+        });
+    });
+
+    // =============================================
+    // 4. CERRAR LIGHTBOX
+    // =============================================
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Botón cerrar
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeLightbox);
+    }
+
+    // Clic fuera de la imagen
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeLightbox();
+        }
+    });
+
+    // Tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.style.display === 'block') {
+            closeLightbox();
+        }
+    });
+
+    console.log('✅ Lightbox inicializado correctamente');
+
+});
     console.log('✅ Galería cargada correctamente');
 
 });
