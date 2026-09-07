@@ -1,7 +1,6 @@
 /**
  * galeria.js
- * Funcionalidad para la página de galería
- * Filtros por categoría y animación de carga
+ * Funcionalidad para la página de galería: filtros, animación de carga y lightbox
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =============================================
-    // 2. FILTROS DE GALERÍA
+    // 2. FILTROS DE GALERÍA (solo en galeria.html)
     // =============================================
     const filtros = document.querySelectorAll('.filtro-btn');
     const items = document.querySelectorAll('.galeria-item');
@@ -29,11 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
         filtros.forEach(function(btn) {
             btn.addEventListener('click', function() {
 
-                // Quitar clase active de todos los botones
                 filtros.forEach(function(b) {
                     b.classList.remove('active');
                 });
-                // Añadir clase active al botón clickado
                 btn.classList.add('active');
 
                 const filtro = btn.dataset.filtro;
@@ -41,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 items.forEach(function(item) {
                     if (filtro === 'todos' || item.dataset.categoria === filtro) {
                         item.style.display = 'block';
-                        // Animación suave al aparecer
                         item.style.opacity = '0';
                         item.style.transform = 'scale(0.95)';
                         setTimeout(function() {
@@ -58,10 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =============================================
-    // 3. ANIMACIÓN DE CARGA (entrada escalonada)
+    // 3. ANIMACIÓN DE CARGA (solo en galeria.html)
     // =============================================
     items.forEach(function(item, index) {
-        // Ocultar inicialmente
         item.style.opacity = '0';
         item.style.transform = 'translateY(20px)';
 
@@ -73,98 +68,64 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // =============================================
-    // 4. EFECTO DE CARGA DE IMÁGENES (placeholder)
-    // =============================================
-    const imagenes = document.querySelectorAll('.galeria-item img');
-
-    imagenes.forEach(function(img) {
-        // Si la imagen no está cargada, mostrar un color de fondo
-        img.addEventListener('error', function() {
-            this.style.display = 'none';
-            // Añadir un placeholder visual
-            const parent = this.parentElement;
-            const placeholder = document.createElement('div');
-            placeholder.style.cssText = `
-                        width: 100%;
-                        height: 100%;
-                        background: #e8e4e0;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        color: #8a7a6a;
-                        font-size: 3rem;
-                        font-family: 'Playfair Display', serif;
-                    `;
-            placeholder.textContent = '🔧';
-            parent.appendChild(placeholder);
-        });
-    });
-/**
- * galeria.js
- * Lightbox para las galerías de imágenes
- */
-
-document.addEventListener('DOMContentLoaded', function() {
-
-    // =============================================
-    // 1. ELEMENTOS DEL LIGHTBOX
+    // 4. LIGHTBOX (para páginas de detalle: galeria-cerrajeria.html, etc.)
     // =============================================
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxCaption = document.getElementById('lightboxCaption');
     const closeBtn = document.querySelector('.lightbox-close');
 
-    // =============================================
-    // 2. OBTENER TODAS LAS IMÁGENES DE LA GALERÍA
-    // =============================================
+    // Obtener todas las imágenes de la galería de detalle
     const images = document.querySelectorAll('.detalle-item img');
 
-    // =============================================
-    // 3. ABRIR LIGHTBOX AL HACER CLIC EN UNA IMAGEN
-    // =============================================
-    images.forEach(function(img) {
-        img.addEventListener('click', function() {
-            const src = this.getAttribute('src');
-            const alt = this.getAttribute('alt') || 'Imagen';
-            const overlay = this.closest('.detalle-item').querySelector('.detalle-overlay p');
+    if (images.length > 0) {
+        console.log('📸 Imágenes encontradas para lightbox:', images.length);
 
-            lightboxImg.src = src;
-            lightboxCaption.textContent = overlay ? overlay.textContent : alt;
-            lightbox.style.display = 'block';
-            document.body.style.overflow = 'hidden'; // Evitar scroll
+        // Abrir lightbox al hacer clic
+        images.forEach(function(img) {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', function() {
+                const src = this.getAttribute('src');
+                const alt = this.getAttribute('alt') || 'Imagen';
+                const overlay = this.closest('.detalle-item').querySelector('.detalle-overlay p');
+
+                lightboxImg.src = src;
+                lightboxCaption.textContent = overlay ? overlay.textContent : alt;
+                lightbox.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+            });
         });
-    });
 
-    // =============================================
-    // 4. CERRAR LIGHTBOX
-    // =============================================
-    function closeLightbox() {
-        lightbox.style.display = 'none';
-        document.body.style.overflow = 'auto';
+        // Cerrar lightbox
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Botón cerrar
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeLightbox);
+        }
+
+        // Clic fuera de la imagen
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Tecla ESC
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && lightbox.style.display === 'block') {
+                closeLightbox();
+            }
+        });
+
+        console.log('✅ Lightbox inicializado correctamente');
+    } else {
+        console.log('ℹ️ No hay imágenes de detalle en esta página (lightbox no activado)');
     }
 
-    // Botón cerrar
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeLightbox);
-    }
-
-    // Clic fuera de la imagen
-    lightbox.addEventListener('click', function(e) {
-        if (e.target === this) {
-            closeLightbox();
-        }
-    });
-
-    // Tecla ESC
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && lightbox.style.display === 'block') {
-            closeLightbox();
-        }
-    });
-
-    console.log('✅ Lightbox inicializado correctamente');
-
-});
     console.log('✅ Galería cargada correctamente');
 
 });
